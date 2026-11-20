@@ -48,8 +48,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 }
             }
         } catch (Exception e) {
+
             // Token inválido o expirado
+            System.out.println("ERROR JWT: " + e.getMessage());
+            e.printStackTrace();
         }
+        
+            
+        
 
         filterChain.doFilter(request, response);
     }
